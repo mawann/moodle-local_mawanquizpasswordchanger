@@ -16,7 +16,7 @@
 //
 // @package local_mawanquizpasswordchanger
 // @copyright 2025 Mawan Agus Nugroho
-// @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
 
 // Prevent direct access to this script.
 defined('MOODLE_INTERNAL') || die();
@@ -35,6 +35,9 @@ header('Access-Control-Allow-Headers: Content-Type');
  * @param string $data The data to sanitize.
  * @return string The sanitized data.
  * @package local_mawanquizpasswordchanger
+ *
+ *  @Copyright 2025 Mawan Agus Nugroho
+ *  @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 function sanitize_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));
