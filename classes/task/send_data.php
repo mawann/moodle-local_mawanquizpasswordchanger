@@ -16,7 +16,7 @@
 
 namespace local_mawanquizpasswordchanger\task;
 
-require_once(__DIR__ . '../../../../config.php');
+require_once(__DIR__ . '/../../../../config.php');
 
 /**
  * Task to send data to mawan.net server.
