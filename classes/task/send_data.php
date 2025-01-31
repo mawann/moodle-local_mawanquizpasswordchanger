@@ -14,9 +14,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-require_once(__DIR__ . '/../../config.php');
-
 namespace local_mawanquizpasswordchanger\task;
+
+require_once(__DIR__ . '/../../config.php');
 
 /**
  * Task to send data to mawan.net server.
