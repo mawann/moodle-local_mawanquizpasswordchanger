@@ -50,6 +50,8 @@ class send_data extends \core\task\scheduled_task {
      */
     private function get_token() {
         global $CFG;
+        require_once($CFG->libdir . '/curl.php');
+
         // Get plugin config.
         $config = get_config('local_mawanquizpasswordchanger');
 
