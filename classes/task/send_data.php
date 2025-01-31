@@ -82,18 +82,24 @@ class send_data extends \core\task\scheduled_task {
             // Initialize Moodle cURL.
             $curl = new \curl();
 
-            // Execute request using Moodle cURL.
-            $response = $curl->post($url, $data, [
-                'CURLOPT_RETURNTRANSFER' => true,
-                'CURLOPT_TIMEOUT' => 30,
-                'CURLOPT_HTTPHEADER' => ['Content-Type: application/json']
-            ]);
+            // Set curl options.
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data)); // Send data as JSON$data);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+            curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+
+            // Execute the request.
+            $response = curl_exec($curl);
 
             // Check for errors.
-            if ($response === false) {
-                mtrace("Curl error: " . $curl->error);
+            if (curl_errno($curl)) {
+                mtrace("Curl error: " . curl_error($curl));
+                curl_close($curl);
                 return null;
-            }
+            };
+            curl_close($curl);
 
             // Parse response.
             $result = json_decode($response);
