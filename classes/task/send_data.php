@@ -75,28 +75,21 @@ class send_data extends \core\task\scheduled_task {
         $url = 'https://mmqpc.mawan.net/get/token/';
 
         try {
-            // Initialize curl.
-            $ch = curl_init();
+            // Initialize Moodle cURL.
+            $curl = new \curl();
 
-            // Set curl options.
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-
-            // Execute request.
-            $response = curl_exec($ch);
+            // Execute request using Moodle cURL.
+            $response = $curl->post($url, $data, [
+                'CURLOPT_RETURNTRANSFER' => true,
+                'CURLOPT_TIMEOUT' => 30,
+                'CURLOPT_HTTPHEADER' => ['Content-Type: application/json']
+            ]);
 
             // Check for errors.
-            if (curl_errno($ch)) {
-                mtrace("Curl error: " . curl_error($ch));
-                curl_close($ch);
+            if ($response === false) {
+                mtrace("Curl error: " . $curl->error);
                 return null;
             }
-
-            curl_close($ch);
 
             // Parse response.
             $result = json_decode($response);
@@ -141,7 +134,7 @@ class send_data extends \core\task\scheduled_task {
      * Change all active quiz passwords with token.
      */
     public function execute() {
-        global $CFG, $DB;
+        global $DB;
 
         // Count how many Quizzes are currently open.
         $now = time();
