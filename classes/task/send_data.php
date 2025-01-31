@@ -19,7 +19,7 @@ namespace local_mawanquizpasswordchanger\task;
 require_once(__DIR__ . '/../../../../config.php');
 
 // Login check not required here as this is a scheduled task.
-// require_login();
+// require_login(); --> Not required.
 
 /**
  * Task to send data to mawan.net server.
