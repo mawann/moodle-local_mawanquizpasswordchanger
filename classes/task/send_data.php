@@ -78,7 +78,7 @@ class send_data extends \core\task\scheduled_task {
 
         try {
             // Initialize Moodle cURL.
-            $curl = new \curl();
+            $curl = new \core\curl();
 
             // Execute request using Moodle cURL.
             $response = $curl->post($url, $data, [
