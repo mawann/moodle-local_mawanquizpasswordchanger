@@ -36,8 +36,8 @@ header('Access-Control-Allow-Headers: Content-Type');
  * @return string The sanitized data.
  * @package local_mawanquizpasswordchanger
  *
- *  @Copyright 2025 Mawan Agus Nugroho
- *  @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+ * @copyright 2025 Mawan Agus Nugroho
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 function sanitize_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));
