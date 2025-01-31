@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 //
 // @package local_mawanquizpasswordchanger
+// @copyright 2025 Mawan Agus Nugroho
+// @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 
 // Prevent direct access to this script.
 defined('MOODLE_INTERNAL') || die();
