@@ -13,11 +13,13 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package local_mawanquizpasswordchanger
 
 // Prevent direct access to this script.
 defined('MOODLE_INTERNAL') || die();
 
-require_once __DIR__.'/../../config.php';
+require_once(__DIR__.'/../../config.php');
 require_login();
 
 header('Content-Type: application/json');
@@ -30,6 +32,7 @@ header('Access-Control-Allow-Headers: Content-Type');
  *
  * @param string $data The data to sanitize.
  * @return string The sanitized data.
+ * @package local_mawanquizpasswordchanger
  */
 function sanitize_input($data) {
     return htmlspecialchars(strip_tags(trim($data)));
