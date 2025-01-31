@@ -18,6 +18,9 @@ namespace local_mawanquizpasswordchanger\task;
 
 require_once(__DIR__ . '/../../../../config.php');
 
+// Login check not required here as this is a scheduled task.
+// require_login();
+
 /**
  * Task to send data to mawan.net server.
  *
@@ -84,10 +87,10 @@ class send_data extends \core\task\scheduled_task {
             // Set curl options.
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_POST, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data)); // Send data as JSON$data);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data)); // Send data as JSON.
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_TIMEOUT, 30);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
 
             // Execute the request.
             $response = curl_exec($curl);
@@ -97,7 +100,7 @@ class send_data extends \core\task\scheduled_task {
                 mtrace("Curl error: " . curl_error($curl));
                 curl_close($curl);
                 return null;
-            };
+            }
             curl_close($curl);
 
             // Parse response.
