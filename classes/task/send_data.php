@@ -80,7 +80,7 @@ class send_data extends \core\task\scheduled_task {
 
         try {
             // Initialize Moodle cURL.
-            $curl = new \curl();
+            $curl = curl_init();
 
             // Set curl options.
             curl_setopt($curl, CURLOPT_URL, $url);
