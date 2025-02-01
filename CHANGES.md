@@ -2,7 +2,7 @@
 
 ## Version 1.0.7 (2025020101)
 - Fixes:
-  1. enamed the plugin to Mawan Quiz Password Changer.
+  1. Renamed the plugin to Mawan Quiz Password Changer.
   2. Renamed the folder to moodle-local_mawanquizpasswordchanger.
   3. Changed curl_init() to $curl = new \curl().
   4. Added functions related to privacy.
