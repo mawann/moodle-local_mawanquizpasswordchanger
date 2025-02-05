@@ -24,9 +24,12 @@
 
 $string['duration'] = 'Duración';
 $string['duration_desc'] = 'Duración en minutos.';
+$string['errorchangingpassword'] = 'Error al cambiar la contraseña del cuestionario: {$a}';
+$string['invalidtoken'] = 'Token de autenticación proporcionado no válido';
 $string['last_check'] = 'Última verificación';
 $string['last_check_desc'] = 'Última verificación';
 $string['last_check_empty'] = '(Sin verificación aún)';
+$string['passwordchanged'] = 'La contraseña del cuestionario se ha cambiado con éxito';
 $string['pluginname'] = 'Cambiador de Contraseñas de Cuestionarios de Mawan';
 $string['privacy:metadata'] = 'El plugin Cambiador de Contraseñas de Cuestionarios de Mawan no almacena ningún dato personal.';
 $string['privacy:metadata:mawanquizpasswordchanger'] = 'Integración con el servicio de generación de contraseñas de Mawan.NET';

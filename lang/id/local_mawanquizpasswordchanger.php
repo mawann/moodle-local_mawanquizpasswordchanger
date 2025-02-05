@@ -24,9 +24,12 @@
 
 $string['duration'] = 'Durasi';
 $string['duration_desc'] = 'Durasi dalam menit sebelum password kuis berubah.';
+$string['errorchangingpassword'] = 'Terjadi kesalahan saat mengubah password kuis: {$a}';
+$string['invalidtoken'] = 'Token autentikasi yang diberikan tidak valid';
 $string['last_check'] = 'Pengecekan Terakhir';
 $string['last_check_desc'] = 'Pengecekan Terakhir';
 $string['last_check_empty'] = '(Belum ada pengecekan)';
+$string['passwordchanged'] = 'Password kuis telah berhasil diubah';
 $string['pluginname'] = 'Pengubah Password Kuis Moodle buatan Mawan';
 $string['privacy:metadata'] = 'Plugin Pengubah Password Kuis Mawan tidak menyimpan data pribadi.';
 $string['privacy:metadata:mawanquizpasswordchanger'] = 'Integrasi dengan layanan pembuatan kata sandi Mawan.NET';

@@ -24,11 +24,14 @@
 
 $string['duration'] = 'Duration';
 $string['duration_desc'] = 'Duration in minutes.';
+$string['errorchangingpassword'] = 'Error changing quiz password: {$a}';
+$string['invalidtoken'] = 'Invalid authentication token provided';
 $string['last_check'] = 'Last check';
 $string['last_check_desc'] = 'Last Check';
 $string['last_check_empty'] = '(No last check yet)';
+$string['passwordchanged'] = 'Quiz password has been successfully changed';
 $string['pluginname'] = 'Mawan Quiz Password Changer';
-$string['privacy:metadata'] = 'The Mawan Quiz Password Changer plugin sends data to an external service to generate quiz passwords.';
+$string['privacy:metadata'] = 'The Mawan Quiz Password Changer plugin does not store any personal data.';
 $string['privacy:metadata:mawanquizpasswordchanger'] = 'Integration with Mawan.NET password generation service';
 $string['privacy:metadata:serialnumber'] = 'Your plugin serial number';
 $string['privacy:metadata:validuntil'] = 'The expiration date of your license';

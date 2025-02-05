@@ -15,32 +15,31 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Privacy Subsystem implementation for local_mawanquizpasswordchanger.
+ * Web service definitions for local_mawanquizpasswordchanger
  *
  * @package    local_mawanquizpasswordchanger
  * @copyright  2025 Mawan Agus Nugroho <mawan911@yahoo.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_mawanquizpasswordchanger\privacy;
-
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * Privacy Subsystem for local_mawanquizpasswordchanger implementing null_provider.
- *
- * @copyright  2025 Mawan Agus Nugroho <mawan911@yahoo.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class provider implements \core_privacy\local\metadata\null_provider {
+$functions = [
+    'local_mawanquizpasswordchanger_change_password' => [
+        'classname'   => 'local_mawanquizpasswordchanger\external\change_password',
+        'methodname'  => 'execute',
+        'description' => 'Changes the password for a specified quiz',
+        'type'        => 'write',
+        'ajax'        => true,
+        'capabilities'=> 'mod/quiz:manage'
+    ]
+];
 
-    /**
-     * Get the language string identifier with the component's language
-     * file to explain why this plugin stores no data.
-     *
-     * @return  string
-     */
-    public static function get_reason() : string {
-        return 'privacy:metadata';
-    }
-}
+// We define the services to install as pre-build services. A pre-build service is not editable by administrator.
+$services = [
+    'Mawan Quiz Password Changer' => [
+        'functions' => ['local_mawanquizpasswordchanger_change_password'],
+        'restrictedusers' => 0,
+        'enabled' => 1
+    ]
+];
