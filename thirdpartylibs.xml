@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<libraries>
+    <library>
+        <location>vendor/</location>
+        <name>No third-party libraries are currently used</name>
+        <version></version>
+        <license>GPL</license>
+        <licenseversion>3.0+</licenseversion>
+    </library>
+</libraries>

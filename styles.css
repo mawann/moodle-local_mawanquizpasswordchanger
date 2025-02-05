@@ -1,0 +1,51 @@
+/* Styles for Mawan Quiz Password Changer plugin */
+
+.path-local-mawanquizpasswordchanger .password-status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.path-local-mawanquizpasswordchanger .password-status.success {
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+}
+
+.path-local-mawanquizpasswordchanger .password-status.error {
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
+
+.path-local-mawanquizpasswordchanger .token-display {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.path-local-mawanquizpasswordchanger .settings-form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.path-local-mawanquizpasswordchanger .settings-form .form-group {
+    margin-bottom: 15px;
+}
+
+.path-local-mawanquizpasswordchanger .settings-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.path-local-mawanquizpasswordchanger .settings-form .help-block {
+    color: #737373;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

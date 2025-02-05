@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin version and other meta-data are defined here.
+ * Plugin upgrade steps are defined here.
  *
  * @package   local_mawanquizpasswordchanger
  * @copyright 2025 Mawan Agus Nugroho <mawan911@yahoo.com>
@@ -24,17 +24,22 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_mawanquizpasswordchanger';
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = '1.0.7';
-$plugin->requires  = 2022041900;        // Requires Moodle 4.0 or later
-$plugin->version   = 2025020101;        // Version 1.0.7 (Date: 2025-02-01-01)
-$plugin->dependencies = [
-    'mod_quiz' => 2022041900            // Requires Quiz module version 4.0 or later
-];
-$plugin->supported = [
-    400,                                // Moodle 4.0
-    401,                                // Moodle 4.1
-    402,                                // Moodle 4.2
-    403                                 // Moodle 4.3
-];
+/**
+ * Execute local_mawanquizpasswordchanger upgrade from the given old version.
+ *
+ * @param int $oldversion
+ * @return bool
+ */
+function xmldb_local_mawanquizpasswordchanger_upgrade($oldversion) {
+    global $DB;
+
+    // Moodle v4.0.0 release upgrade line.
+    // Put any upgrade step following this.
+
+    if ($oldversion < 2025020101) {
+        // Add new capabilities.
+        upgrade_plugin_savepoint(true, 2025020101, 'local', 'mawanquizpasswordchanger');
+    }
+
+    return true;
+}
