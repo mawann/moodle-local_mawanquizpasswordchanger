@@ -33,8 +33,5 @@ $plugin->dependencies = [
     'mod_quiz' => 2022041900            // Requires Quiz module version 4.0 or later
 ];
 $plugin->supported = [
-    400,                                // Moodle 4.0
-    401,                                // Moodle 4.1
-    402,                                // Moodle 4.2
-    403                                 // Moodle 4.3
+    400 => [400, 403]                   // Supports Moodle 4.0.x through 4.3.x
 ];
