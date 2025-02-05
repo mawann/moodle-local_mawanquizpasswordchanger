@@ -28,7 +28,7 @@ $plugin->component = 'local_mawanquizpasswordchanger';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->release   = '1.0.7';
 $plugin->requires  = 2022041900;        // Requires Moodle 4.0 or later
-$plugin->version   = 2025020101;        // Version 1.0.7 (Date: 2025-02-01-01)
+$plugin->version   = 2025020600;        // Version 1.0.7 (Date: 2025-02-06-00)
 $plugin->dependencies = [
     'mod_quiz' => 2022041900            // Requires Quiz module version 4.0 or later
 ];
