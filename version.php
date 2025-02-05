@@ -32,6 +32,3 @@ $plugin->version   = 2025020600;        // Version 1.0.7 (Date: 2025-02-06-00)
 $plugin->dependencies = [
     'mod_quiz' => 2022041900            // Requires Quiz module version 4.0 or later
 ];
-$plugin->supported = [
-    400 => [400, 403]                   // Supports Moodle 4.0.x through 4.3.x
-];
